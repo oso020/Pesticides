@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pesticides/Config/routes/routes_manger.dart';
+
+import 'Config/theme/theming.dart';
 
 void main(){
   runApp(MyApp());
@@ -10,8 +14,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return ScreenUtilInit(
+      designSize:  const Size(412, 892),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_ , child) {
+        return  MaterialApp(
+          debugShowCheckedModeBanner: false,
+          initialRoute: RoutesManger.routeNameRegister,
+          routes: RoutesManger.route,
+          theme: MyTheme.theme,
 
+        );
+      },
     );
   }
 }
