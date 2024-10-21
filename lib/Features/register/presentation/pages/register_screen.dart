@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pesticides/Config/routes/routes_manger.dart';
 import 'package:pesticides/Core/component/button_custom.dart';
 import 'package:pesticides/Core/utils/images.dart';
 import 'package:pesticides/Core/utils/strings.dart';
@@ -83,6 +84,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   StringManager.already_have_an_account,
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
+                onTap: () {
+                  Navigator.pushNamed(context, RoutesManger.routeNameLogin);
+                },
               )
             ],
           ),
